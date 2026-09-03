@@ -1,0 +1,6 @@
+{
+  "name": "منظّم الملفات الذكي وكاشف المكررات",
+  "description": "واجهة رسومية متطورة لفحص وتنظيم الملفات والتخلص من المكررات بسرعة وأمان، مع مولّد سكربت بايثون المكتمل",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
