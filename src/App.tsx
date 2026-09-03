@@ -80,6 +80,20 @@ export default function App() {
                     </div>
                   </div>
                 </div>
+                {/* Privacy notice */}
+<div className="rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-4 py-3">
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
+    <span className="text-lg">🔒</span>
+    <div>
+      <p className="text-sm font-bold text-emerald-300">
+        خصوصيتك محفوظة
+      </p>
+      <p className="text-xs text-slate-300 mt-1">
+        تتم معالجة الملفات محليًا على جهازك، ولا يتم رفع الملفات أو إرسال نتائج الفحص إلى GitHub أو أي خادم خارجي.
+      </p>
+    </div>
+  </div>
+</div>
 
                 {/* The Scanner Tool */}
                 <FolderScanner onScanComplete={handleScanComplete} />
