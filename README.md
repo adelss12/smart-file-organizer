@@ -1,20 +1,18 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# منظّم الملفات الذكي وكاشف المكررات (Smart File Organizer)
 
-# Run and deploy your AI Studio app
+تطبيق متكامل لفحص وتنظيم الملفات والتخلص من الملفات المكررة بأمان تام وتوفير مساحة القرص.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/be630b49-449b-4b53-9cba-9581e3824f8b
+## 🌟 المميزات الرئيسية
+- ⚡ **فحص فائق السرعة:** مقارنة الحجم ثم الهاش الجزئي ثم SHA-256 كامل لتوفير وقت المعالجة.
+- 🛡️ **حماية 100% من الحلقة المفرغة:** عزل تلقائي لمجلد الحفظ الجديد لمنع تكرار النسخ الذاتي.
+- 📂 **خيارات المعالجة:** النسخ الآمن (Copy) أو النقل وتوفير المساحة الفورية (Move).
+- 🖥️ **واجهة بايثون الرسومية (GUI):** تعمل على أي جهاز حاسوب دون الحاجة لتثبيت أي مكتبات خارجية.
+- 📝 **توثيق كامل:** إنشاء تقرير نصي شامل للملفات والمكررات المحذوفة وصافي المساحة الموفرة.
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🚀 طريقة التشغيل على الكمبيوتر
+```bash
+python organizer_gui.py
