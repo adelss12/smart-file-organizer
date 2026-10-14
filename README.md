@@ -43,7 +43,7 @@ python organizer_gui.py
 
 ## 🛠️ بناء ملف EXE
 
-يُبنى الملف تلقائياً على خوادم GitHub عند نشر إصدار جديد (ملف `.github/workflows/build-exe.yml`). للبناء يدوياً على ويندوز:
+يُبنى الملف تلقائياً على خوادم GitHub كلما تغيّر كود البرنامج، باسم رقم الإصدار المكتوب في `APP_VERSION` (ملف `.github/workflows/build-exe.yml`). للبناء يدوياً على ويندوز:
 
 ```bash
 pip install pyinstaller
