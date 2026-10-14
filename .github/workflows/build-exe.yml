@@ -1,0 +1,43 @@
+name: Build Windows EXE
+
+# يُبنى ملف EXE على خادم ويندوز من GitHub عند نشر وسم إصدار (مثل v2.1.0)،
+# ويُرفع تلقائياً إلى صفحة الإصدارات. يمكن تشغيله يدوياً من تبويب Actions أيضاً.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+
+      - name: Check that the app imports
+        run: python -c "import organizer_gui as m; assert m.tk is not None; print(m.APP_VERSION)"
+
+      - name: Build EXE
+        run: pyinstaller --onefile --windowed --name SmartFileOrganizer organizer_gui.py
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartFileOrganizer
+          path: dist/SmartFileOrganizer.exe
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/SmartFileOrganizer.exe
+          body_path: RELEASE_NOTES.md
